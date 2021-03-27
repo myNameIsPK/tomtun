@@ -34,9 +34,7 @@ export default function Menu(props) {
         </li>
       </ul>
       <div className="aunt-dialogue">
-        <textarea name="aunt" id="aunt" cols="30" rows="10">
-          วันนี้กินอะไรดีจ๋ะ
-        </textarea>
+        วันนี้กินอะไรดี
       </div>
       <input className="Confirm-btn" type="button" value="Confirm" />
       <input className="Restart-btn" type="button" value="Restart" />
