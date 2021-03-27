@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,11 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.diagram-component {
+  width: 400px;
+  height: 400px;
+  border: solid 1px black;
+  background-color: white;
 }
