@@ -1,16 +1,10 @@
-// import logo from './logo.svg';
-import "./App.css";
-import Menu from "./Menu";
-import Diagram from './Diagram'
-
+import Container1 from"./component/Container1"
+import Container2 from"./component/Container2"
 function App() {
   return (
-    <div className="App">
-      <Diagram />
-      <header className="top-bar">
-        <div className="CanteenName">ต้มตุ๋น</div>
-      </header>
-      <Menu />
+    <div className="container">
+      <Container1/>
+      <Container2/>
     </div>
   );
 }
