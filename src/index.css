@@ -1,22 +1,7 @@
-.container{
-  display: flex;
-  flex-wrap: nowrap;
-}
-.container1{
-  width: 80%;
-  text-align: center;
-  background-color: #FFC371;
-}
-.container2{
-  width: 20%;
-  background-color: darkblue;
-}
-.dfa{
-  width: 100%;
-  height: 80%;
-}
-.outputstring{
-  width: 100%;
-  height: 20%;
+.myDiagramDiv {
+  width: 1000px;
+  height: 500px;
+  border: solid 1px black;
+  background-color: white;
 }
 
