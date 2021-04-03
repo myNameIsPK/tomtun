@@ -1,5 +1,4 @@
-import aunt_head from './pic/aunt_header.png'
-const Haedmenu = () => {
+const Haedmenu = ({aunt_head}) => {
     return (
         <div>
             <img className = 'pic_auntheader' src={aunt_head}/>
