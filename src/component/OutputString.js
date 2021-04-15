@@ -2,7 +2,7 @@ const OutputString = () => {
     return (
         <div className = "outputstring">
             <h1>Input String</h1>
-            <p>tomtun tomtun tomtun tomtun tomtun tomtuns</p>
+            <p>test test test test test test test</p>
         </div>
     )
 }
