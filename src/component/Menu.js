@@ -20,22 +20,22 @@ const Menu = () => {
         console.log(state)
     }
     const Click_rice = () =>{
-        setState({...state,rice : true,mama : false})
+        setState(prevState => ({...prevState, rice : true, mama : false, string : prevState.string + 'ข้าว '}))
     }
     const Click_mama = () =>{
-        setState({...state,mama : true,rice : false})
+        setState(prevState => ({...prevState, mama : true, rice : false, string : prevState.string + 'มาม่า '}))
     }
     const Click_pork = () =>{
-        setState({...state,pork : true,beef : false})
+        setState(prevState => ({...prevState,pork : true,beef : false, string : prevState.string + 'หมูตุ๋น '}))
     }
     const Click_beef = () =>{
-        setState({...state,beef : true,pork : false})
+        setState(prevState => ({...prevState,beef : true,pork : false, string : prevState.string + 'เนื้อตุ๋น '}))
     }
-    const Click_krapao = () =>{
-        setState({...state,krapao : true,karee : false})
+    const Click_kapao = () =>{
+        setState(prevState => ({...state,krapao : true,karee : false, string : prevState.string + 'ผัดกะเพรา '}))
     }
     const Click_karee = () =>{
-        setState({...state,karee : true,krapao : false})
+        setState(prevState => ({...prevState,karee : true,krapao : false, string : prevState.string + 'ผัดผงกระหรี่ '}))
     }
     const reset = () =>{
         setState({
@@ -44,7 +44,8 @@ const Menu = () => {
             pork:false,
             beef:false,
             krapao:false,
-            karee:false})
+            karee:false,
+            string : ''})
     }
     return (
         <div className = 'menu'>
@@ -74,7 +75,7 @@ const Menu = () => {
             textfood2 = 'ผัดผงกระหรี่'
             pic1 = {pic_kapao}
             pic2 = {pic_karee}
-            onClick1 = {Click_krapao}
+            onClick1 = {Click_kapao}
             onClick2 = {Click_karee}/>
 
             <Conversation />

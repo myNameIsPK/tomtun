@@ -10,7 +10,8 @@ function App() {
     pork:false,
     beef:false,
     krapao:false,
-    karee:false})
+    karee:false,
+    string: ''})
 
   return (
     <GlobalState.Provider value={[state,setState]}>
