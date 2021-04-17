@@ -1,6 +1,7 @@
 import Container1 from"./component/Container1"
 import Container2 from"./component/Container2"
 import GlobalState from './component/GlobalState';
+import aunt from './component/pic/aunt_conversation.png'
 import React,{useState} from 'react'
 
 function App() {
@@ -9,9 +10,11 @@ function App() {
     mama:false,
     pork:false,
     beef:false,
-    krapao:false,
+    kapao:false,
     karee:false,
-    string: ''})
+    string: '',
+    conver: 'วันนี้กินอะไรดีจ๊ะ?',
+    pic : aunt})
 
   return (
     <GlobalState.Provider value={[state,setState]}>
