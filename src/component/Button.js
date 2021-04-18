@@ -1,8 +1,8 @@
-const Button = ({text,src_pic,onClick}) => {
+const Button = ({text,src_pic,onClick,classname}) => {
     return (
-        <button onClick = {onClick}>
+        <button className = {classname} onClick = {onClick}>
             <span className = 'circle'>
-                <img src={src_pic}/>
+                <img className = 'pic_btn' src={src_pic}/>
             </span>
             <p className = 'btn_name'>
                 {text}

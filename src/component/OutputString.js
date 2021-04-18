@@ -6,8 +6,8 @@ const OutputString = () => {
     
     return (
         <div className = "outputstring">
-            <h1>Input String</h1>
-            <p>{state.string}</p>
+            <h1 className = 'header-output'>Input String</h1>
+            <p className = 'output'>{state.string}</p>
         </div>
     )
 }
