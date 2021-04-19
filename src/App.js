@@ -1,17 +1,29 @@
-// import logo from './logo.svg';
+import Container1 from"./component/Container1"
+import Container2 from"./component/Container2"
+import GlobalState from './component/GlobalState';
+import aunt from './component/pic/aunt_conversation.png'
+import React,{useState} from 'react'
 import "./App.css";
-import Menu from "./Menu";
-import Diagram from './Diagram'
 
 function App() {
+  const [state, setState] = useState({
+    rice:false,
+    mama:false,
+    pork:false,
+    beef:false,
+    kapao:false,
+    karee:false,
+    string: '',
+    conver: 'วันนี้กินอะไรดีจ๊ะ?',
+    pic : aunt})
+
   return (
-    <div className="App">
-      <Diagram />
-      <header className="top-bar">
-        <div className="CanteenName">ต้มตุ๋น</div>
-      </header>
-      <Menu />
-    </div>
+    <GlobalState.Provider value={[state,setState]}>
+        <div className="App">
+          <Container1/>
+          <Container2/>
+        </div>
+    </GlobalState.Provider>
   );
 }
 
