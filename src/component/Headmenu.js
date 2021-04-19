@@ -1,4 +1,5 @@
-const Haedmenu = ({aunt_head}) => {
+import './cssFile/Headmenu.css'
+const Headmenu = ({aunt_head}) => {
     return (
         <div>
             <img className = 'pic_auntheader' src={aunt_head}/>
@@ -7,4 +8,4 @@ const Haedmenu = ({aunt_head}) => {
     )
 }
 
-export default Haedmenu
+export default Headmenu

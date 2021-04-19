@@ -3,6 +3,7 @@ import Container2 from"./component/Container2"
 import GlobalState from './component/GlobalState';
 import aunt from './component/pic/aunt_conversation.png'
 import React,{useState} from 'react'
+import './component/cssFile/App.css'
 
 function App() {
   const [state, setState] = useState({
@@ -11,7 +12,10 @@ function App() {
     pork:false,
     beef:false,
     krapao:false,
-    karee:false})
+    karee:false,
+    string: '',
+    conver: 'วันนี้กินอะไรดีจ๊ะ?',
+    pic : aunt})
 
   return (
     <GlobalState.Provider value={[state,setState]}>

@@ -1,0 +1,23 @@
+.member {
+/* bg */
+position: absolute;
+width: 1440px;
+height: 45px;
+left: 0px;
+top: 859px;
+display: flex;
+/* สีช่องรายชื่อสมาชิก */
+background: #310B0B;
+color: white;
+justify-content: space-around;
+
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 22px;
+}
+
+p {
+    margin-top: 12px;
+}

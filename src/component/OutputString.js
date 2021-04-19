@@ -1,3 +1,5 @@
+import './cssFile/OutputString.css'
+
 const OutputString = () => {
     return (
         <div className = "outputstring">

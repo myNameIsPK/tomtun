@@ -1,4 +1,4 @@
-import Headmenu from './Haedmenu'
+import Headmenu from './Headmenu'
 import Step from './Step'
 import Conversation from './Conversation'
 import Button from './Button'
@@ -12,6 +12,7 @@ import pic_karee from './pic/Curry powder.png'
 
 import GlobalState from './GlobalState';
 import React, { useContext} from 'react';
+
 
 const Menu = () => {
     const [state, setState] = useContext(GlobalState);
