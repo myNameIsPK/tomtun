@@ -1,12 +1,17 @@
-import aunt from './pic/aunt_conversation.png'
+import React,{useContext,useState} from 'react'
+import GlobalState from './GlobalState';
+
+
 const Conversation = () => {
+    const [state, setState] = useContext(GlobalState);
+ 
     return (
-        <div>
+        <div className = 'Aunt_conver'>
             <span>
-                <img src= {aunt} />
+                <img src= {state.pic} />
             </span>
             <h1 className = 'aunt_conver'>
-                รับอะไรดีจ๊ะ พ่อหนุ่ม
+                {state.conver}
             </h1>
         </div>
     )

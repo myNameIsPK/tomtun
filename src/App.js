@@ -11,7 +11,7 @@ function App() {
     mama:false,
     pork:false,
     beef:false,
-    krapao:false,
+    kapao:false,
     karee:false,
     string: '',
     conver: 'วันนี้กินอะไรดีจ๊ะ?',
