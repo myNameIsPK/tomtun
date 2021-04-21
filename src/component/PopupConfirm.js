@@ -1,9 +1,11 @@
 const PopupConfirm = ({toggle,pic,string}) => {
     return (
-        <div className = 'box-popup'>
+        <div className = 'popup-container'>
+        <div className = 'popup'>
              <img className = 'popup_pic' src={pic} />
              <h1 className = 'popup_string'> {string} </h1>
              <button className = 'take_order' onClick = {toggle}>รับอาหาร</button>
+        </div>
         </div>
     )
 }
