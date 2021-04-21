@@ -15,7 +15,8 @@ function App() {
     karee:false,
     string: '',
     conver: 'วันนี้กินอะไรดีจ๊ะ?',
-    pic : aunt})
+    pic : aunt,
+    isReset: false})
 
   return (
     <GlobalState.Provider value={[state,setState]}>

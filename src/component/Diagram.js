@@ -1,9 +1,16 @@
 import * as go from "gojs";
 import { ReactDiagram } from "gojs-react";
+import GlobalState from './GlobalState';
+import React, {useContext, useEffect} from 'react';
+import defaultMachine from './stateMachine';
+
+let machine = {...defaultMachine};
 
 const DiagramModel = require("./DiagramModel.json");
+let myDiagram
 
 function init() {
+
   var $ = go.GraphObject.make;  // for conciseness in defining templates
 
   // some constants that will be reused within templates
@@ -12,17 +19,20 @@ function init() {
     spot1: go.Spot.TopLeft, spot2: go.Spot.BottomRight  // make content go all the way to inside edges of rounded corners
   };
   
-  const myDiagram =
+  myDiagram =
   $(go.Diagram,  // must name or refer to the DIV HTML element
     {
-      "animationManager.initialAnimationStyle": go.AnimationManager.None,
-      "InitialAnimationStarting": function(e) {
-        var animation = e.subject.defaultAnimation;
-        animation.easing = go.Animation.EaseOutExpo;
-        animation.duration = 900;
-        animation.add(e.diagram, 'scale', 0.1, 1);
-        animation.add(e.diagram, 'opacity', 0, 1);
-      },
+      initialDocumentSpot: go.Spot.Left,
+      initialViewportSpot: go.Spot.Left,
+      // initialAutoScale: go.Diagram.Uniform,
+      // "animationManager.initialAnimationStyle": go.AnimationManager.None,
+      // "InitialAnimationStarting": function(e) {
+      //   var animation = e.subject.defaultAnimation;
+      //   animation.easing = go.Animation.EaseOutExpo;
+      //   animation.duration = 900;
+      //   animation.add(e.diagram, 'scale', 0.1, 1);
+      //   animation.add(e.diagram, 'opacity', 0, 1);
+      // },
       
       // have mouse wheel events zoom in and out instead of scroll up and down
       "toolManager.mouseWheelBehavior": go.ToolManager.WheelZoom,
@@ -47,7 +57,7 @@ function init() {
     }
   });
 
-  function hightLight(node) {
+  function mouseHightLight(node) {
     var shape = node.findObject("SHAPE");
     shape.fill = "#6DAB80";
     shape.stroke = "#A6E6A1";
@@ -59,11 +69,12 @@ function init() {
       if (p.from == node.key){
         myDiagram.model.set(p, 'colorPath', "#52ce60");
         myDiagram.model.set(p, 'colorText', "#52ce60");
+        myDiagram.model.set(p, 'bold', true);
       }
     }
   };
 
-  function resetHightLight(node) {
+  function mouseResetHightLight(node) {
     var shape = node.findObject("SHAPE");
     shape.fill = "#9e3309";
     shape.stroke = null;
@@ -75,6 +86,7 @@ function init() {
       if (p.from == node.key){
         myDiagram.model.set(p, 'colorPath', null);
         myDiagram.model.set(p, 'colorText', null);
+        myDiagram.model.set(p, 'bold', false);
       }
     }
   };
@@ -88,8 +100,8 @@ function init() {
         isShadowed: true, shadowBlur: 1,
         shadowOffset: new go.Point(0, 1),
         shadowColor: "rgba(0, 0, 0, .14)",
-        mouseEnter: (e,node) => {hightLight(node)},
-        mouseLeave: (e,node) => {resetHightLight(node)},
+        // mouseEnter: (e,node) => {mouseHightLight(node)},
+        // mouseLeave: (e,node) => {mouseResetHightLight(node)},
       },
       new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
       // define the node's outer shape, which will surround the TextBlock
@@ -169,16 +181,19 @@ function init() {
       $(go.Shape,  // the link shape
         { strokeWidth: 1.5 },
         new go.Binding('stroke', 'colorPath', function(progress) {
-          return progress ? "#52ce60" /* green */ : 'black';
+          return progress ? progress /* green */ : 'black';
         }),
-        new go.Binding('strokeWidth', 'widthPath', function(progress) {
-          return progress ? 2.5 : 1.5;
+        new go.Binding('strokeWidth', 'bold', function(progress) {
+          return progress==true ? 2.5 : 1.5;
         })
         ),
       $(go.Shape,  // the arrowhead
-        { toArrow: "standard", stroke: null },
-        new go.Binding('fill', 'progress', function(progress) {
-          return progress ? "#52ce60" /* green */ : 'black';
+        { toArrow: "Standard", stroke: null },
+        new go.Binding('fill', 'colorPath', function (progress) {
+          return progress ? progress /* green */ : 'black';
+        }),
+        new go.Binding('scale', 'bold', function (progress) {
+          return progress==true ? 2 : 1;
         })),
       $(go.Panel, "Auto",
         // $(go.Shape,  // the label background, which becomes transparent around the edges
@@ -198,20 +213,112 @@ function init() {
           // editing the text automatically updates the model data
           new go.Binding("text").makeTwoWay(),
           new go.Binding("stroke", 'colorText', function (progress) {
-            return progress ? '#52ce60' : "black";
+            return progress ? progress : "black";
           }))
       )
     );
 
   // read in the JSON data from the "mySavedModel" element
   myDiagram.model = new go.Model.fromJson(DiagramModel)
+  myDiagram.isReadOnly = true;
   return myDiagram
   
 }
 
+const highlightNode = (key, fill, stroke, textstroke) => {
+  var node = myDiagram.findNodeForKey(key);
+  myDiagram.scrollToRect(node.actualBounds);
+  if(!(node.key == -1 || node.key == -2)){
+    var shape = node.findObject("SHAPE");
+    shape.fill = fill;
+    shape.stroke = stroke;
+    var text = node.findObject("TEXT");
+    text.stroke = textstroke;
+  }
+}
 
+const highlightPath = (key, colorPath, colorText, bold) => {
+  var node = myDiagram.findNodeForKey(key);
+  for (const p of myDiagram.model.linkDataArray) {
+    if (p.from == node.key){
+      myDiagram.model.set(p, 'colorPath', colorPath);
+      myDiagram.model.set(p, 'colorText', colorText);
+      myDiagram.model.set(p, 'bold', bold);
+    }
+  }
+}
+
+let oldFrom = 0
+let oldTo = 0
+
+const highlightOldPath = (oldFrom, oldTo, colorPath, colorText, bold) => {
+  for (const p of myDiagram.model.linkDataArray) {
+    if (p.from == oldFrom && p.to == oldTo){
+      myDiagram.model.set(p, 'colorPath', colorPath);
+      myDiagram.model.set(p, 'colorText', colorText);
+      myDiagram.model.set(p, 'bold', bold);
+    }
+  }
+}
+
+const updateModel = (next) => {
+  // reset highlight node and path
+  if(myDiagram.findNodeForKey(machine.current_State.key) != null){
+    highlightNode(machine.current_State.key, "#9e3309", null, "#ffffff")
+  }
+  highlightPath(machine.current_State.key, null, null, false)
+
+  // highlight node and path
+  highlightNode(next.key, "#6DAB80", "#A6E6A1", "white")
+  highlightPath(next.key, "#52ce60", "#52ce60", true)
+
+  highlightOldPath(oldFrom, oldTo, null, null, false)
+  oldFrom = machine.current_State.key
+  oldTo = next.key
+  highlightOldPath(oldFrom, oldTo, "#FF0000", "#FF0000", true) //red
+}
+
+const resetModel = () => {
+  // reset highlight node and path
+  if(myDiagram.findNodeForKey(machine.current_State.key) != null){
+    highlightNode(machine.current_State.key, "#9e3309", null, "#ffffff")
+  }
+  highlightPath(machine.current_State.key, null, null, false)
+  highlightOldPath(oldFrom, oldTo, null, null, false)
+}
+const getLastString = (input) => {
+  input = input.split(' ')
+  input.pop()
+  return input.pop()
+}
 
 export default function Diagram(props) {
+
+  const [state, setState] = useContext(GlobalState);
+  
+  useEffect(() => {
+    highlightPath(machine.current_State.key, "#52ce60", "#52ce60", true) // start hightlight
+  })
+
+  useEffect(() => {
+    if(state.isReset == true){
+      resetModel()
+      machine = {...defaultMachine};
+      setState({...state, isReset : false})
+    }
+  },[state.isReset])
+
+  useEffect(() => {
+    let input = state.string
+    machine.input_String = getLastString(input)
+    if(machine.input_String){
+      let next = machine.getNext(machine.input_String) 
+      console.log(next);
+      updateModel(next)
+      machine.setCurrentState(next)
+    }
+  },[state])
+
   return (
     <ReactDiagram
       initDiagram={init}
