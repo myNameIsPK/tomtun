@@ -1,4 +1,4 @@
-const PopupConfirm = ({toggle,pic,string}) => {
+const PopupConfirm = ({toggle,pic,string,reset}) => {
     return (
         <div className = 'box-popup'>
              <img className = 'popup_pic' src={pic} />

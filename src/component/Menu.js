@@ -40,9 +40,6 @@ const Menu = () => {
         pic : r_b_kapao,
         string : ''
     })
-    const togglePopup = () =>{
-        setIsOpen(!isOpen)
-    }
     const confirm = () =>{
         setState(prevState => 
             ({...prevState, string : prevState.string + 'Confirm ',}))
@@ -235,6 +232,7 @@ const Menu = () => {
             conver : 'วันนี้กินอะไรดีจ๊ะ?',
             pic : aunt,
             isReset: true})
+        setIsOpen(!isOpen)
     }
 
     return (
@@ -269,7 +267,7 @@ const Menu = () => {
             onClick2 = {Click_karee}/>
 
             <Conversation ch_pic = {state.pic}/>
-            {isOpen && <PopupConfirm toggle = {togglePopup} pic = {popup.pic} string = {popup.string}/>}
+            {isOpen && <PopupConfirm toggle = {reset} pic = {popup.pic} string = {popup.string}/>}
             <Button text = 'ยืนยัน' onClick = {confirm} classname = 'confirm'/>
             <Button text = 'เริ่มสั่งใหม่' onClick = {reset} classname = 'reset'/>
 
