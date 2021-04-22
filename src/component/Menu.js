@@ -29,6 +29,7 @@ import m_p_karee from './pic/mama-pork-karee.jpg'
 import GlobalState from './GlobalState';
 import React, { useState,useContext} from 'react';
 
+import './cssFile/Menu.css'
 
 
 const Menu = () => {
@@ -238,7 +239,7 @@ const Menu = () => {
         <div className = 'menu'>
             <Headmenu aunt_head = {pic_auntheader}/>
             <Step
-            classname = 'step 1' 
+            classname = 'step-1' 
             text_step = 'Step 1 : เลือกข้าวหรือเส้น' 
             textfood1 = 'ข้าว' 
             textfood2 = 'มาม่า' 
@@ -247,7 +248,7 @@ const Menu = () => {
             onClick1 = {Click_rice}
             onClick2 = {Click_mama}/>
             <Step
-            classname = 'step 2'
+            classname = 'step-2'
             text_step = 'Step 2 : เลือกเนื้อสัตว์'
             textfood1 = 'หมู่ตุ๋น'
             textfood2 = 'เนื้อตุ๋น'
@@ -256,19 +257,22 @@ const Menu = () => {
             onClick1 = {Click_pork}
             onClick2 = {Click_beef}/>
             <Step 
-            classname = 'step 3'
+            classname = 'step-3'
             text_step = 'Step 3 : เลือกวิธีปรุง'
             textfood1 = 'ผัดกะเพรา'
             textfood2 = 'ผัดผงกระหรี่'
             pic1 = {pic_kapao}
             pic2 = {pic_karee}
             onClick1 = {Click_kapao}
-            onClick2 = {Click_karee}/>
+            onClick2 = {Click_karee}/> 
 
             <Conversation ch_pic = {state.pic}/>
             {isOpen && <PopupConfirm toggle = {togglePopup} pic = {popup.pic} string = {popup.string}/>}
-            <Button text = 'ยืนยัน' onClick = {confirm} classname = 'confirm'/>
-            <Button text = 'เริ่มสั่งใหม่' onClick = {reset} classname = 'reset'/>
+            <div className="answer-container">
+                <Button text = 'ยืนยัน' onClick = {confirm} classname = 'confirm'/>
+                <Button text = 'เริ่มสั่งใหม่' onClick = {reset} classname = 'reset'/>
+            </div>
+            
 
         </div>
     )

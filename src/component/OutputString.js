@@ -1,6 +1,7 @@
 import GlobalState from './GlobalState';
 import React, { useEffect,useContext,useState} from 'react';
 
+import './cssFile/OutputString.css'
 const OutputString = () => {
     const [state, setState] = useContext(GlobalState);
     

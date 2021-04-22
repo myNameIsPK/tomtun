@@ -1,7 +1,7 @@
 .container2{
-    position: absolute;
-    width: 361px;
-    height: 860px;
-    left: 1079px;
-    top: 0px;
+    position: fixed;
+    width: 25%;
+    height: 95%;
+    right: 0;
+    bottom: 5%;
 }

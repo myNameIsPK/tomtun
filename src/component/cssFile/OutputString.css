@@ -1,8 +1,9 @@
 .outputstring{
-    position: absolute;
-    width: 1079px;
-    height: 150px;
-    left: 0px;
-    top: 709px;
+    position: fixed;
+    width: 65%;
+    height: 16.5%;
+    right: 35%;
+    bottom: 5%;
+    border: solid 1px black;
     background-color: blue;
 }

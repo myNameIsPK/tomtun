@@ -1,8 +1,9 @@
 .myDiagramDiv {
-    position: absolute;
-    width: 1079px;
-    height: 709px;
+    position: fixed;
+    width: 65%;
+    height: 78.5%;
+    right: 35%;
+    bottom: 22.46%;
     border: solid 1px black;
     background-color: white;
 }
-  
