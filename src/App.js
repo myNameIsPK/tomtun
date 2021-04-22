@@ -3,7 +3,7 @@ import Container2 from"./component/Container2"
 import GlobalState from './component/GlobalState';
 import aunt from './component/pic/aunt_conversation.png'
 import React,{useState} from 'react'
-import "./App.css";
+import './component/cssFile/App.css'
 
 function App() {
   const [state, setState] = useState({

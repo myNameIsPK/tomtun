@@ -1,5 +1,6 @@
 import DFA from "./DFA"
 import OutputString from "./OutputString"
+import './cssFile/Container1.css'
 
 const Container1 = () => {
     return (
