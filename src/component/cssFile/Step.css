@@ -1,8 +1,13 @@
 /* Step1 css style */
 
 .step-1{
+    width: 310px;
+    height: 116px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 30px;
     display: grid;
-    grid-template-columns: 10% 40% 5% 40% 5%;
+    grid-template-columns: 1% 47.25% 3% 47.25% 1%;
     grid-template-rows: 40% 60%;
 }
 
@@ -48,8 +53,13 @@
 /* Step2 css style */
 
 .step-2{
+    width: 310px;
+    height: 116px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 30px;
     display: grid;
-    grid-template-columns: 10% 40% 5% 40% 5%;
+    grid-template-columns: 1% 47.25% 3% 47.25% 1%;
     grid-template-rows: 40% 60%;
 }
 
@@ -94,8 +104,13 @@
 /* Step3 css style */
 
 .step-3{
+    width: 310px;
+    height: 116px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 30px;
     display: grid;
-    grid-template-columns: 10% 40% 5% 40% 5%;
+    grid-template-columns: 1% 47.25% 3% 47.25% 1%;
     grid-template-rows: 40% 60%;
 }
 
@@ -115,7 +130,7 @@
     color: #000000;
 }
 
-.step-3 .ผัดกะเพรา{
+.step-3 .ผัดกระเพรา{
     /* grid */
     grid-row: 2/3;
     grid-column: 2/3;
@@ -126,3 +141,15 @@
     grid-row: 2/3;
     grid-column: 4/5;
 }
+/* 
+.step-3 .ผัดกะเพรา .pic_btn{
+    bottom: 50%;
+    right: 10%;
+    width: 45px;
+    height: 45px;
+}
+
+.step-3 .ผัดผงกระหรี่ .pic_btn{
+    width: 45px;
+    height: 45px;
+} */

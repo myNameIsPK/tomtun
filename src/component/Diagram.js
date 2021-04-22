@@ -64,11 +64,11 @@ function init() {
     var text = node.findObject("TEXT");
     text.stroke = "white";
 
-    // node.findLinksOutOf().each( l => l.progress = "#52ce60")
+    // node.findLinksOutOf().each( l => l.progress = "#188630")
     for (const p of myDiagram.model.linkDataArray) {
       if (p.from == node.key){
-        myDiagram.model.set(p, 'colorPath', "#52ce60");
-        myDiagram.model.set(p, 'colorText', "#52ce60");
+        myDiagram.model.set(p, 'colorPath', "#188630");
+        myDiagram.model.set(p, 'colorText', "#188630");
         myDiagram.model.set(p, 'bold', true);
       }
     }
@@ -76,7 +76,7 @@ function init() {
 
   function mouseResetHightLight(node) {
     var shape = node.findObject("SHAPE");
-    shape.fill = "#9e3309";
+    shape.fill = "#9D2600";
     shape.stroke = null;
     var text = node.findObject("TEXT");
     text.stroke = "#ffffff";
@@ -107,7 +107,7 @@ function init() {
       // define the node's outer shape, which will surround the TextBlock
       $(go.Shape, "Circle", roundedRectangleParams,
         {
-          name: "SHAPE", fill: "#9e3309", strokeWidth: 0,
+          name: "SHAPE", fill: "#9D2600", strokeWidth: 0,
           stroke: null,
           portId: "",  // this Shape is the Node's port, not the whole Node
           fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
@@ -149,7 +149,7 @@ function init() {
       new go.Binding("location", "loc", go.Point.parse).makeTwoWay(go.Point.stringify),
       $(go.Shape, "Circle",
         {
-          fill: "maroon",
+          fill: "#FF0000",
           stroke: null,
           portId: "",
           fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
@@ -207,7 +207,7 @@ function init() {
             textAlign: "center",
             font: "9pt helvetica, arial, sans-serif",
             margin: 4,
-            background: 'rgb(255, 207, 104)',
+            background: '#FFC371',
             editable: true  // enable in-place editing
           },
           // editing the text automatically updates the model data
@@ -264,13 +264,13 @@ const highlightOldPath = (oldFrom, oldTo, colorPath, colorText, bold) => {
 const updateModel = (next) => {
   // reset highlight node and path
   if(myDiagram.findNodeForKey(machine.current_State.key) != null){
-    highlightNode(machine.current_State.key, "#9e3309", null, "#ffffff")
+    highlightNode(machine.current_State.key, "#9D2600", null, "#ffffff")
   }
   highlightPath(machine.current_State.key, null, null, false)
 
   // highlight node and path
-  highlightNode(next.key, "#6DAB80", "#A6E6A1", "white")
-  highlightPath(next.key, "#52ce60", "#52ce60", true)
+  highlightNode(next.key, "#188630", "#A6E6A1", "white")
+  highlightPath(next.key, "#188630", "#188630", true)
 
   highlightOldPath(oldFrom, oldTo, null, null, false)
   oldFrom = machine.current_State.key
@@ -281,7 +281,7 @@ const updateModel = (next) => {
 const resetModel = () => {
   // reset highlight node and path
   if(myDiagram.findNodeForKey(machine.current_State.key) != null){
-    highlightNode(machine.current_State.key, "#9e3309", null, "#ffffff")
+    highlightNode(machine.current_State.key, "#9D2600", null, "#ffffff")
   }
   highlightPath(machine.current_State.key, null, null, false)
   highlightOldPath(oldFrom, oldTo, null, null, false)
@@ -297,7 +297,7 @@ export default function Diagram(props) {
   const [state, setState] = useContext(GlobalState);
   
   useEffect(() => {
-    highlightPath(machine.current_State.key, "#52ce60", "#52ce60", true) // start hightlight
+    highlightPath(machine.current_State.key, "#188630", "#188630", true) // start hightlight
   })
 
   useEffect(() => {

@@ -20,7 +20,7 @@ function App() {
 
   return (
     <GlobalState.Provider value={[state,setState]}>
-        <div className="App">
+        <div className="app">
           <Container1/>
           <Container2/>
         </div>

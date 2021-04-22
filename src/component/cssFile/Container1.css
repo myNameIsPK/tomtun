@@ -1,7 +1,5 @@
 .container1 {
-    position: fixed;
-    width: 75%;
-    height: 95%;
-    right: 25%;
-    bottom: 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
