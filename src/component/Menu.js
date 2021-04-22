@@ -283,6 +283,7 @@ const Menu = () => {
             <Conversation ch_pic = {state.pic}/>
 
             {isOpen && <PopupConfirm toggle = {toggle} pic = {popup.pic} string = {popup.string}/>}
+            
             <div className="answer-container">
                 <Button text = 'ยืนยัน' onClick = {confirm} classname = 'confirm'/>
                 <Button text = 'เริ่มสั่งใหม่' onClick = {reset} classname = 'reset'/>
