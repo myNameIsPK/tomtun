@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: 10% 40% 5% 40% 5%;
     grid-template-rows: 40% 60%;
+    background-color: white;
 }
 
 .step-1 .step-header{
@@ -35,15 +36,17 @@
 }
 
 .step-1 .ข้าว .pic_btn{
-    bottom: 50%;
-    right: 10%;
-    width: 45px;
-    height: 45px;
+    z-index: -1;
+    grid-area: 2 / 2 / 6 / 3 ;
+    width: 90%;
+    height: 100%;
 }
 
 .step-1 .มาม่า .pic_btn{
-    width: 45px;
-    height: 45px;
+    z-index: -1;
+    grid-area: 2 / 2 / 6 / 3 ;
+    width: 75%;
+    height: 90%;
 }
 /* Step2 css style */
 
@@ -51,6 +54,8 @@
     display: grid;
     grid-template-columns: 10% 40% 5% 40% 5%;
     grid-template-rows: 40% 60%;
+    background-color: white;
+
 }
 
 .step-2 .step-header{
@@ -69,7 +74,7 @@
     color: #000000;
 }
 
-.step-2 .หมู่ตุ๋น{
+.step-2 .หมูตุ๋น{
     /* grid */
     grid-row: 2/3;
     grid-column: 2/3;
@@ -81,15 +86,18 @@
     grid-column: 4/5;
 }
 
-.step-2 .หมู่ตุ๋น .pic_btn{
-    margin-left: 2px;
-    width: 49px;
-    height: 49px;
+.step-2 .หมูตุ๋น .pic_btn{
+    z-index: -1;
+    grid-area: 2 / 2 / 6 / 3 ;
+    width: 80%;
+    height: 100%;
 }
 
 .step-2 .เนื้อตุ๋น .pic_btn{
-    width: 40px;
-    height: 40px;
+    z-index: -1;
+    grid-area: 2 / 2 / 6 / 3 ;
+    width: 80%;
+    height: 90%;
 }
 /* Step3 css style */
 
@@ -97,6 +105,8 @@
     display: grid;
     grid-template-columns: 10% 40% 5% 40% 5%;
     grid-template-rows: 40% 60%;
+    background-color: white;
+
 }
 
 .step-3 .step-header{
@@ -115,14 +125,28 @@
     color: #000000;
 }
 
-.step-3 .ผัดกระเพรา{
+.step-3 .ผัดกะเพรา{
     /* grid */
     grid-row: 2/3;
     grid-column: 2/3;
 }
 
-.step-3 .ผัดผงกระหรี่{
+.step-3 .ผัดผงกะหรี่{
     /* grid */
     grid-row: 2/3;
     grid-column: 4/5;
+}
+
+.step-3 .ผัดกะเพรา .pic_btn{
+    z-index: -1;
+    grid-area: 1 / 1 / 6 / 3 ;
+    width: 100%;
+    height: 100%;
+}
+
+.step-3 .ผัดผงกะหรี่ .pic_btn{
+    z-index: -1;
+    grid-area: 1 / 1 / 6 / 3 ;
+    width: 100%;
+    height: 100%;
 }

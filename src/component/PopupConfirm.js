@@ -1,3 +1,5 @@
+import './cssFile/Popup.css'
+
 const PopupConfirm = ({toggle,pic,string}) => {
     return (
         <div className='popup-container'>

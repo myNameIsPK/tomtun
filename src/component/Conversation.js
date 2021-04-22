@@ -9,6 +9,7 @@ const Conversation = () => {
     return (
         <div className = 'Aunt_conver'>
             <img src= {state.pic} />
+            <p className="square"></p>
             <h1 className = 'aunt_conver'>
                 {state.conver}
             </h1>

@@ -207,7 +207,7 @@ function init() {
             textAlign: "center",
             font: "9pt helvetica, arial, sans-serif",
             margin: 4,
-            background: 'rgb(255, 207, 104)',
+            background: '#FFC371',
             editable: true  // enable in-place editing
           },
           // editing the text automatically updates the model data

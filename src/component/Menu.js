@@ -120,9 +120,9 @@ const Menu = () => {
                 pic : aunt,
                 kapao : true,
                 karee : false, 
-                string : prevState.string + 'ผัดกระเพรา ',
-                conver : 'ข้าวผัดกระเพราหมูตุ๋นหรือจ๊ะ?'}))
-        setPopup({pic : r_p_kapao,string : 'ข้าวผัดกระเพราหมูตุ๋น เสร็จแล้วจ้า'})
+                string : prevState.string + 'ผัดกะเพรา ',
+                conver : 'ข้าวผัดกะเพราหมูตุ๋นหรือจ๊ะ?'}))
+        setPopup({pic : r_p_kapao,string : 'ข้าวผัดกะเพราหมูตุ๋น เสร็จแล้วจ้า'})
             }
         else if(state.rice && state.beef)
         {setState(prevState => 
@@ -130,9 +130,9 @@ const Menu = () => {
                 pic : aunt,
                 kapao : true,
                 karee : false, 
-                string : prevState.string + 'ผัดกระเพรา ',
-                conver : 'ข้าวผัดกระเพราเนื้อตุ๋นหรือจ๊ะ?'}))
-        setPopup({pic : r_b_kapao ,string : 'ข้าวผัดกระเพราเนื้อตุ๋น เสร็จแล้วจ้า'})
+                string : prevState.string + 'ผัดกะเพรา ',
+                conver : 'ข้าวผัดกะเพราเนื้อตุ๋นหรือจ๊ะ?'}))
+        setPopup({pic : r_b_kapao ,string : 'ข้าวผัดกะเพราเนื้อตุ๋น เสร็จแล้วจ้า'})
             }
         else if(state.mama && state.pork)
         {setState(prevState => 
@@ -140,9 +140,9 @@ const Menu = () => {
                 pic : aunt,
                 kapao : true,
                 karee : false, 
-                string : prevState.string + 'ผัดกระเพรา ',
-                conver : 'มาม่าผัดกระเพราหมูตุ๋นหรือจ๊ะ?'}))
-        setPopup({pic : m_p_kapao ,string : 'มาม่าผัดกระเพราหมูตุ๋น เสร็จแล้วจ้า'})
+                string : prevState.string + 'ผัดกะเพรา ',
+                conver : 'มาม่าผัดกะเพราหมูตุ๋นหรือจ๊ะ?'}))
+        setPopup({pic : m_p_kapao ,string : 'มาม่าผัดกะเพราหมูตุ๋น เสร็จแล้วจ้า'})
             }
         else if(state.mama && state.beef)
         {setState(prevState => 
@@ -150,20 +150,20 @@ const Menu = () => {
                 pic : aunt,
                 kapao : true,
                 karee : false, 
-                string : prevState.string + 'ผัดกระเพรา ',
-                conver : 'มาม่าผัดกระเพราเนื้อตุ๋นหรือจ๊ะ?'}))
-        setPopup({pic : m_b_kapao ,string : 'มาม่าผัดกระเพราเนื้อตุ๋น เสร็จแล้วจ้า'})
+                string : prevState.string + 'ผัดกะเพรา ',
+                conver : 'มาม่าผัดกะเพราเนื้อตุ๋นหรือจ๊ะ?'}))
+        setPopup({pic : m_b_kapao ,string : 'มาม่าผัดกะเพราเนื้อตุ๋น เสร็จแล้วจ้า'})
             }
         else if(state.rice || state.mama)
         {setState(prevState => 
             ({...prevState,
                 pic : aunt_warning,
-                string : prevState.string + 'ผัดกระเพรา ',
+                string : prevState.string + 'ผัดกะเพรา ',
                 conver : 'เลือกเนื้อสัตว์ก่อนนะจ๊ะ'}))}
         else{setState(prevState => 
             ({...prevState,
                 pic : aunt_warning,
-                string : prevState.string + 'ผัดกระเพรา ',
+                string : prevState.string + 'ผัดกะเพรา ',
                 conver : 'เลือกข้าวหรือเส้นก่อนนะจ๊ะ'}))}
         
     }
@@ -174,9 +174,9 @@ const Menu = () => {
                 pic : aunt,
                 kapao : true,
                 karee : false, 
-                string : prevState.string + 'ผัดผงกระหรี่ ',
-                conver : 'ข้าวผัดผงกระหรี่หมูตุ๋นหรือจ๊ะ?'}))
-        setPopup({pic : r_p_karee ,string : 'ข้าวผัดผงกระหรี่หมูตุ๋น เสร็จแล้วจ้า'})
+                string : prevState.string + 'ผัดผงกะหรี่ ',
+                conver : 'ข้าวผัดผงกะหรี่หมูตุ๋นหรือจ๊ะ?'}))
+        setPopup({pic : r_p_karee ,string : 'ข้าวผัดผงกะหรี่หมูตุ๋น เสร็จแล้วจ้า'})
             }
         else if(state.rice && state.beef)
         {setState(prevState => 
@@ -184,9 +184,9 @@ const Menu = () => {
                 pic : aunt,
                 kapao : true,
                 karee : false, 
-                string : prevState.string + 'ผัดผงกระหรี่ ',
-                conver : 'ข้าวผัดผงกระหรี่เนื้อตุ๋นหรือจ๊ะ?'}))
-        setPopup({pic : r_b_karee ,string : 'ข้าวผัดผงกระหรี่เนื้อตุ๋น เสร็จแล้วจ้า'})
+                string : prevState.string + 'ผัดผงกะหรี่ ',
+                conver : 'ข้าวผัดผงกะหรี่เนื้อตุ๋นหรือจ๊ะ?'}))
+        setPopup({pic : r_b_karee ,string : 'ข้าวผัดผงกะหรี่เนื้อตุ๋น เสร็จแล้วจ้า'})
             }
         else if(state.mama && state.pork)
         {setState(prevState => 
@@ -194,9 +194,9 @@ const Menu = () => {
                 pic : aunt,
                 kapao : true,
                 karee : false, 
-                string : prevState.string + 'ผัดผงกระหรี่ ',
-                conver : 'มาม่าผัดผงกระหรี่หมูตุ๋นหรือจ๊ะ?'}))
-        setPopup({pic : m_p_karee ,string : 'มาม่าผัดผงกระหรี่หมูตุ๋น เสร็จแล้วจ้า'})
+                string : prevState.string + 'ผัดผงกะหรี่ ',
+                conver : 'มาม่าผัดผงกะหรี่หมูตุ๋นหรือจ๊ะ?'}))
+        setPopup({pic : m_p_karee ,string : 'มาม่าผัดผงกะหรี่หมูตุ๋น เสร็จแล้วจ้า'})
             }
         else if(state.mama && state.beef)
         {setState(prevState => 
@@ -204,20 +204,20 @@ const Menu = () => {
                 pic : aunt,
                 kapao : true,
                 karee : false, 
-                string : prevState.string + 'ผัดผงกระหรี่ ',
-                conver : 'มาม่าผัดผงกระหรี่เนื้อตุ๋นหรือจ๊ะ?'}))
-        setPopup({pic : m_b_karee ,string : 'มาม่าผัดผงกระหรี่เนื้อตุ๋น เสร็จแล้วจ้า'})
+                string : prevState.string + 'ผัดผงกะหรี่ ',
+                conver : 'มาม่าผัดผงกะหรี่เนื้อตุ๋นหรือจ๊ะ?'}))
+        setPopup({pic : m_b_karee ,string : 'มาม่าผัดผงกะหรี่เนื้อตุ๋น เสร็จแล้วจ้า'})
             }
         else if(state.rice || state.mama)
         {setState(prevState => 
             ({...prevState,
                 pic : aunt_warning,
-                string : prevState.string + 'ผัดผงกระหรี่ ',
+                string : prevState.string + 'ผัดผงกะหรี่ ',
                 conver : 'เลือกเนื้อสัตว์ก่อนนะจ๊ะ'}))}
         else{setState(prevState => 
             ({...prevState,
                 pic : aunt_warning,
-                string : prevState.string + 'ผัดผงกระหรี่ ',
+                string : prevState.string + 'ผัดผงกะหรี่ ',
                 conver : 'เลือกข้าวหรือเส้นก่อนนะจ๊ะ'}))}
         
     }
@@ -264,7 +264,7 @@ const Menu = () => {
             <Step
             classname = 'step-2'
             text_step = 'Step 2 : เลือกเนื้อสัตว์'
-            textfood1 = 'หมู่ตุ๋น'
+            textfood1 = 'หมูตุ๋น'
             textfood2 = 'เนื้อตุ๋น'
             pic1 = {pic_pork}
             pic2 = {pic_beef}
@@ -273,8 +273,8 @@ const Menu = () => {
             <Step 
             classname = 'step-3'
             text_step = 'Step 3 : เลือกวิธีปรุง'
-            textfood1 = 'ผัดกระเพรา'
-            textfood2 = 'ผัดผงกระหรี่'
+            textfood1 = 'ผัดกะเพรา'
+            textfood2 = 'ผัดผงกะหรี่'
             pic1 = {pic_kapao}
             pic2 = {pic_karee}
             onClick1 = {Click_kapao}

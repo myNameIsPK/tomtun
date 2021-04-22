@@ -1,7 +1,7 @@
 .Aunt_conver{
     display: grid;
-    grid-template-columns: 5% 30% 25% 20% 20% ;
-    grid-template-rows: 5% 30% 30% 30% 5% ;
+    grid-template-columns: 5% 36% 2% 2% 50% 5% ;
+    grid-template-rows: 5% 44% 1% 1% 44% 5%;
 
 }
 
@@ -9,20 +9,32 @@
     width: 100%;
     height: 100%;
 
-    grid-column: 2/4;
-    grid-row: 3/5;
+    grid-area: 2 / 2 / 6 / 3;
 }
 
 .Aunt_conver .aunt_conver{
-    
-    margin-top: 3%;
-    margin-left: 2%;
+    margin-top: 22%;
+    margin-left: 8%;
+    margin-right: 0;
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 22px;
 
-    grid-column: 2/5 ;
-    grid-row: 3/5 ;
+
+    grid-area: 2 / 5 / 6 / 6;
+
+}
+
+.Aunt_conver .square{
+    
+    margin: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: white;
+    grid-area: 2 / 5 / 6 / 6;
 }
